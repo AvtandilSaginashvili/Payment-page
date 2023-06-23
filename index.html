@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>Payment Method</title>
+</head>
+<body>
+    
+    <div class="maindiv">
+
+        <div class="leftbox">
+
+            <div class="cardfront">
+
+                <img src="./pics/card-logo 1.png" alt="logo" style="margin-left: 24px; margin-top: 15px;">
+
+                <p class="numbers">9591 6489 6321 1023</p>
+
+                <div style="display: flex; justify-content: space-between; margin-top: 25px;">
+
+                    <p class="p-name">Nick Monkey</p>
+                    <p class="date">12/23</p>
+
+                </div>
+
+            </div>
+
+            <div class="cardback">
+
+                <div style="position: relative;"><p class="p044">044</p></div>
+
+            </div>
+
+        </div>
+
+        <div class="rightbox">
+
+            <form>
+
+                <p class="p-cardnum">Card Number</p>
+
+                <input id="num12" class="inputnum" name="pay" type="text" placeholder="1234 1234 1234 1234">
+                <p class="p-woop" id="woops"></p>
+
+                <p class="p-namein">Name</p>
+
+                <input id="wor1" class="inputnum" name="pay" type="text" placeholder="Nick Monkey">
+                <p class="p-woop" id="woops2"></p>
+
+                <div style="display: flex; align-items: center; gap: 68px; margin-top: 42px;">
+
+                    <div>
+
+                        <p class="p-expdate">Exp Date</p>
+
+                        <div style="display: flex; align-items: center; gap: 16px;">
+
+                            <input class="expdate1" name="pay" type="text" id="" placeholder="17">
+
+                            <input class="expdate1" name="pay" type="text" placeholder="23" id="">
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <p class="p-cvc">CVC</p>
+                        
+                        <input class="inpcvc" name="pay" type="text" placeholder="044" id="">
+
+                    </div>
+
+                </div>
+
+                <button onclick="con()" type="button" >Confirm</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="./JS/script.js"></script>
+
+</body>
+</html>
