@@ -7,7 +7,7 @@ function con() {
         document.getElementById("woops").innerHTML = "Woops! input is empty";
         document.getElementById("woops").style.color = "red";
         document.getElementById("num12").style.border = "1px solid red";
-    }else if(typeof inp1 === "NaN") {
+    }else if(typeof inp1 === "") {
         document.getElementById("woops").innerHTML = "Woops! wrong format, numbers only.";
         document.getElementById("woops").style.color = "red";
         document.getElementById("num12").style.border = "1px solid red";
