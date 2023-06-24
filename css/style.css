@@ -188,7 +188,7 @@ form {
     font-weight: 500;
 }
 
-button {
+.button {
     width: 515px;
     height: 55px;
     margin-top: 54px;
@@ -205,14 +205,14 @@ button {
     transition: 0.5s;
 }
 
-button:hover {
+.button:hover {
     transform: translateY(-7px);
     background-color: #FFF;
     color: #610596;
     border: 1px solid #610596;
 }
 
-button:active {
+.button:active {
     transform: translateY(-1px);
     background-color: #FFF;
     color: #610596;
