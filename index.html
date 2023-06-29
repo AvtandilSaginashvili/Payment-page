@@ -42,12 +42,12 @@
 
                 <p class="p-cardnum">Card Number</p>
 
-                <input id="num12" class="inputnum" name="num12" type="text" placeholder="1234 1234 1234 1234">
+                <input id="num12" class="inputnum" name="num12" maxlength="16" type="text" placeholder="1234 1234 1234 1234">
                 <p class="p-woop" id="woops"></p>
 
                 <p class="p-namein">Name</p>
 
-                <input id="wor1" class="inputnum" name="pay" type="text" placeholder="Nick Monkey">
+                <input id="wor1" class="inputnum" name="username" type="text" placeholder="Nick Monkey">
                 <p class="p-woop" id="woops2"></p>
 
                 <div style="display: flex; align-items: center; gap: 68px; margin-top: 42px;">
@@ -58,10 +58,16 @@
 
                         <div style="display: flex; align-items: center; gap: 16px;">
 
-                            <input class="expdate1" name="pay" type="text" id="" placeholder="17">
+                            <div>
+                            <input class="expdate1" name="datenumber" type="text" id="daynumber" placeholder="17">
+                            <p class="p-woop" maxlength="2" id="woops3"></p>
+                            </div>
 
-                            <input class="expdate1" name="pay" type="text" placeholder="23" id="">
-
+                            <div>
+                                <input class="expdate1" maxlength="2" name="pay" type="text" placeholder="23" id="yearnumber">
+                                <p class="p-woop" maxlength="2" id="woops4"></p>
+                            </div>
+                            
                         </div>
 
                     </div>
@@ -70,13 +76,15 @@
 
                         <p class="p-cvc">CVC</p>
                         
-                        <input class="inpcvc" name="pay" type="text" placeholder="044" id="">
+                        <input class="inpcvc" name="pay" type="text" placeholder="044" id="cvc">
+                        <p class="p-woop" maxlength="2" id="woops5"></p>
+                        
 
                     </div>
 
                 </div>
 
-                <input class="button" type="submit" id="sub">
+                <input class="button" type="submit" id="sub" onclick="validation()">
 
             </form>
 

@@ -4,26 +4,57 @@
     val.addEventListener("submit", e => {
         e.preventDefault();
         const input1 = val.num12.value;
-        console.log(iput1);
+        var cardNumberInput = document.getElementById("num12");
+        let alert = document.getElementById('woops');
+        const patternForCardNumber = /^\d{16}$/;
+        
+        if (patternForCardNumber.test(input1)) {
+            cardNumberInput.style.border = "1px solid green";
+            alert.textContent = "";
+        }else {
+            cardNumberInput.style.border = "1px solid red";
+            alert.textContent = "Woops! wrong format, numbers only.";
+            alert.style.color = "red";
+        }
     });
+
+
     
 
+    function validation() {
+        var cardNameInput = document.getElementById("wor1");
+        var day = document.getElementById("daynumber");
+        var year = document.getElementById("yearnumber");
+        var cvc = document.getElementById("cvc");
+        if (cardNameInput.value == "") {
+            document.getElementById("woops2").innerHTML = "Woops! wrong format, input is empty"
+            cardNameInput.style.border = "1px solid red";
+            document.getElementById("woops2").style.color = "red";
+        }else {
+            cardNameInput.style.border = "1px solid green";
+            document.getElementById("woops2").innerHTML = "";
+        }
 
+        if (day.value == "") {
+            day.style.border = "1px solid red";
+            document.getElementById("woops3").style.color = "red";
+        }else {
+            day.style.border = "1px solid green";
+        }
 
+        if (year.value == "") {
+            year.style.border = "1px solid red";
+            document.getElementById("woops4").style.color = "red";
+        }else {
+            year.style.border = "1px solid green";
+        }
 
-// function con() {
+        if (cvc.value == "") {
+            cvc.style.border = "1px solid red";
+            document.getElementById("woops5").style.color = "red";
+        }else {
+            cvc.style.border = "1px solid green";
+        }
 
-//     var inp1 = document.getElementById("num12").value;
-//     var inp2 = document.getElementById("wor1").value;
-
-//     if (inp1 == "" || inp1.lenght == 0) {
-//         document.getElementById("woops").innerHTML = "Woops! input is empty";
-//         document.getElementById("woops").style.color = "red";
-//         document.getElementById("num12").style.border = "1px solid red";
-//     }else if (inp2 == "") {
-//         document.getElementById("woops2").innerHTML = "Woops! input is empty.";
-//         document.getElementById("woops2").style.color = "red";
-//         document.getElementById("wor1").style.border = "1px solid red";
-//     }
-
-// }
+        
+    }
