@@ -1,41 +1,24 @@
 
-
-    const val = document.getElementById("forma");
-    val.addEventListener("submit", e => {
-        e.preventDefault();
-        const input1 = val.num12.value;
-        var cardNumberInput = document.getElementById("num12");
-        let alert = document.getElementById('woops');
-        const patternForCardNumber = /^\d{16}$/;
-        
-        if (patternForCardNumber.test(input1)) {
-            cardNumberInput.style.border = "1px solid green";
-            alert.textContent = "";
-        }else {
-            cardNumberInput.style.border = "1px solid red";
-            alert.textContent = "Woops! wrong format, numbers only.";
-            alert.style.color = "red";
-        }
-    });
-
     var creditCardInput = document.getElementById('num12');
 
     creditCardInput.addEventListener('input', function() {
-
+      // Remove any existing non-digit characters
       var creditCardNumber = this.value.replace(/\D/g, '');
 
+      // Truncate to a maximum of 16 digits
       creditCardNumber = creditCardNumber.slice(0, 16);
 
-
+      // Format the credit card number with spaces
       var formattedNumber = formatCreditCardNumber(creditCardNumber);
 
-
+      // Set the formatted number back to the input field
       this.value = formattedNumber;
     });
 
     function formatCreditCardNumber(creditCardNumber) {
       var formattedNumber = '';
 
+      // Add a space every 4 digits
       for (var i = 0; i < creditCardNumber.length; i++) {
         if (i > 0 && i % 4 === 0) {
           formattedNumber += ' ';
@@ -45,6 +28,25 @@
 
       return formattedNumber;
     }
+
+    const val = document.getElementById("forma");
+    val.addEventListener("submit", e => {
+        e.preventDefault();
+        const input1 = val.num12.value;
+        let alert = document.getElementById('woops');
+        const patternForCardNumber = /^\d{16}$/;
+        
+        if (patternForCardNumber.test(input1)) {
+            creditCardInput.style.border = "1px solid green";
+            alert.textContent = "";
+        }else {
+            creditCardInput.style.border = "1px solid red";
+            alert.textContent = "Woops! wrong format, numbers only.";
+            alert.style.color = "red";
+        }
+    });
+
+    
 
     val.addEventListener("submit", e => {
         e.preventDefault();
