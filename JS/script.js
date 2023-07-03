@@ -40,7 +40,7 @@
         e.preventDefault();
         const input3 = val.daynumber.value;
         const input4 = val.yearnumber.value;
-        const input5 = val.checkVisibility.value;
+        const input5 = val.cvc.value;
         var dayNumberInput = document.getElementById("daynumber");
         var yearNumberInput = document.getElementById("yearnumber");
         var cvcNumberInput = document.getElementById("cvc");
@@ -48,7 +48,7 @@
         let alert4 = document.getElementById("woops4");
         let alert5 = document.getElementById("woops5");
         const patternFordaynumber = /^\d{2}$/;
-        const patternForcvcNumber = /^\d{3}$/;
+        const patternForCvcNumber = /^\d{3}$/;
         
         if (patternFordaynumber.test(input3)) {
             dayNumberInput.style.border = "1px solid green";
@@ -66,7 +66,7 @@
             alert4.textContent = "Woops! numbers only.";
             alert4.style.color = "red";
         }
-        if (patternForcvcNumber.test(input5)) {
+        if (patternForCvcNumber.test(input5)) {
             cvcNumberInput.style.border = "1px solid green";
             alert5.textContent = "";
         }else {
