@@ -18,43 +18,60 @@
         }
     });
 
-
-    
-
-    function validation() {
-        var cardNameInput = document.getElementById("wor1");
-        var day = document.getElementById("daynumber");
-        var year = document.getElementById("yearnumber");
-        var cvc = document.getElementById("cvc");
-        if (cardNameInput.value == "") {
-            document.getElementById("woops2").innerHTML = "Woops! wrong format, input is empty"
-            cardNameInput.style.border = "1px solid red";
-            document.getElementById("woops2").style.color = "red";
-        }else {
-            cardNameInput.style.border = "1px solid green";
-            document.getElementById("woops2").innerHTML = "";
-        }
-
-        if (day.value == "") {
-            day.style.border = "1px solid red";
-            document.getElementById("woops3").style.color = "red";
-        }else {
-            day.style.border = "1px solid green";
-        }
-
-        if (year.value == "") {
-            year.style.border = "1px solid red";
-            document.getElementById("woops4").style.color = "red";
-        }else {
-            year.style.border = "1px solid green";
-        }
-
-        if (cvc.value == "") {
-            cvc.style.border = "1px solid red";
-            document.getElementById("woops5").style.color = "red";
-        }else {
-            cvc.style.border = "1px solid green";
-        }
-
+    val.addEventListener("submit", e => {
+        e.preventDefault();
+        const input2 = val.wor1.value;
+        var userNameInput = document.getElementById("wor1");
+        let alert2 = document.getElementById('woops2');
+        const patternForusername = /^[a-zA-Z]+$/;
         
-    }
+        if (patternForusername.test(input2)) {
+            userNameInput.style.border = "1px solid green";
+            alert2.textContent = "";
+        }else {
+            userNameInput.style.border = "1px solid red";
+            alert2.textContent = "Woops! wrong format, letters only.";
+            alert2.style.color = "red";
+        }
+    });
+
+
+    val.addEventListener("submit", e => {
+        e.preventDefault();
+        const input3 = val.daynumber.value;
+        const input4 = val.yearnumber.value;
+        const input5 = val.checkVisibility.value;
+        var dayNumberInput = document.getElementById("daynumber");
+        var yearNumberInput = document.getElementById("yearnumber");
+        var cvcNumberInput = document.getElementById("cvc");
+        let alert3 = document.getElementById('woops3');
+        let alert4 = document.getElementById("woops4");
+        let alert5 = document.getElementById("woops5");
+        const patternFordaynumber = /^\d{2}$/;
+        const patternForcvcNumber = /^\d{3}$/;
+        
+        if (patternFordaynumber.test(input3)) {
+            dayNumberInput.style.border = "1px solid green";
+            alert3.textContent = "";
+        }else {
+            dayNumberInput.style.border = "1px solid red";
+            alert3.textContent = "Woops! numbers only.";
+            alert3.style.color = "red";
+        }
+        if (patternFordaynumber.test(input4)) {
+            yearNumberInput.style.border = "1px solid green";
+            alert4.textContent = "";
+        }else {
+            yearNumberInput.style.border = "1px solid red";
+            alert4.textContent = "Woops! numbers only.";
+            alert4.style.color = "red";
+        }
+        if (patternForcvcNumber.test(input5)) {
+            cvcNumberInput.style.border = "1px solid green";
+            alert5.textContent = "";
+        }else {
+            cvcNumberInput.style.border = "1px solid red";
+            alert5.textContent = "Woops! numbers only.";
+            alert5.style.color = "red";
+        }
+    });
