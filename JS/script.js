@@ -18,6 +18,34 @@
         }
     });
 
+    var creditCardInput = document.getElementById('num12');
+
+    creditCardInput.addEventListener('input', function() {
+
+      var creditCardNumber = this.value.replace(/\D/g, '');
+
+      creditCardNumber = creditCardNumber.slice(0, 16);
+
+
+      var formattedNumber = formatCreditCardNumber(creditCardNumber);
+
+
+      this.value = formattedNumber;
+    });
+
+    function formatCreditCardNumber(creditCardNumber) {
+      var formattedNumber = '';
+
+      for (var i = 0; i < creditCardNumber.length; i++) {
+        if (i > 0 && i % 4 === 0) {
+          formattedNumber += ' ';
+        }
+        formattedNumber += creditCardNumber.charAt(i);
+      }
+
+      return formattedNumber;
+    }
+
     val.addEventListener("submit", e => {
         e.preventDefault();
         const input2 = val.wor1.value;
