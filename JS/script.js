@@ -24,20 +24,14 @@ function clicked() {
         document.getElementById("woops2").innerHTML = "";
     }
     if (dayNumber.value == "") {
-        document.getElementById("woops3").style.color = "red";
-        document.getElementById("woops3").innerHTML = "Woops! wrong format, input is empty.";
         dayNumber.style.border = "1px solid red";
     }else {
         dayNumber.style.border = "1px solid green";
-        document.getElementById("woops3").innerHTML = "";
     }
     if (yearNumber.value == "") {
-        document.getElementById("woops4").style.color = "red";
-        document.getElementById("woops4").innerHTML = "Woops! wrong format, input is empty.";
         yearNumber.style.border = "1px solid red";
     }else {
         yearNumber.style.border = "1px solid green";
-        document.getElementById("woops4").innerHTML = "";
     }
 
     if (cvcInput.value == "") {
